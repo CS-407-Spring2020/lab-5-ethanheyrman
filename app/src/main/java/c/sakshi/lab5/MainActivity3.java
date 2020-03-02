@@ -13,8 +13,6 @@ import android.widget.EditText;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import android.util.Log;
-
 
 
 public class MainActivity3 extends AppCompatActivity {
@@ -45,16 +43,12 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        Log.i("message", "clicked");
-
         EditText editText = (EditText) findViewById(R.id.editText4);
         String content = editText.getText().toString();
 
         Context context = getApplicationContext();
         sqLiteDatabase = openOrCreateDatabase("notes",Context.MODE_PRIVATE,null);
         dbHelper = new DBHelper(sqLiteDatabase);
-
-        Log.i("message", "hit");
 
         SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
